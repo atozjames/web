@@ -59,7 +59,7 @@
                     <a href="#">Services</a>
                 </li>
                 <li>
-                    <a href="#">Contact</a>
+                    <a href="#menu-toggle"  id="menu-toggle">메뉴 숨기기</a>
                 </li>
             </ul>
         </div>
@@ -70,39 +70,37 @@
             <div class="container-fluid">
                 <div class="row">
                     
-                    <div class="col-lg-12" id="toggle">
-                        <h1>거래테스트</h1>
-                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+                    <div class="col-lg-12" id="toggle2">
+                        <a href="#menu-toggle" class="btn btn-primary" id="menu-toggle">메뉴 숨기기</a>
+                    </div> 
+                    
+                    <div class="panel">
+                    <h2>최근 검진 결과 조회</h2>
                     </div>
                     
-                    <div class="col-lg-12" id="request" ng-show="true">
-                       <div class="well well-lg">
-                           <h3>파라미터 값을 입력하세요</h3>
-                       </div>
-                       <form action="" method="POST" role="form">
-                           <legend>Form title</legend>
+                    <div class="col-lg-12" id="request" ng-show={{requestView}}>
+                       
+                       <form ng-submit="processForm()">
+                           <legend>select_report_result_recent.jsp</legend>
                        
                            <div class="form-group">
-                               <label for="">label</label>
-                               <input type="text" class="form-control" id="" placeholder="Input field">
+                               <label for="">생연월일</label>
+                               <input type="text" class="form-control" id="" placeholder="Input field" ng-model="formData.birth_date">
                            </div>
                            <div class="form-group">
-                               <label for="">label</label>
-                               <input type="text" class="form-control" id="" placeholder="Input field">
+                               <label for="">전화번호</label>
+                               <input type="text" class="form-control" id="" placeholder="Input field" ng-model="formData.phone_number">
                            </div>
-                           <div class="form-group">
-                               <label for="">label</label>
-                               <input type="text" class="form-control" id="" placeholder="Input field">
-                           </div>
+                           
                        
                        
-                           <button type="submit" class="btn btn-primary">Submit</button>
+                           <button  type="submit" class="btn btn-primary" >Submit</button>
                        </form>
 
 
                     </div>
 
-                    <div class="col-lg-12" id="result" ng-show="true">
+                    <div class="col-lg-12" id="result" ng-show={{!requestView}}>
                        <h1>결과가 표시됩니다.</h1>
 
                     </div>
@@ -124,9 +122,14 @@
 
     <!-- Menu Toggle Script -->
     <script>
+    $(document).ready(function(){
+        $("#toggle2").hide();
+    });
+    
     $("#menu-toggle").click(function(e) {
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
+        $("#toggle2").show();
     });
     </script>
     
