@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Title Page</title>
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+		<script src="bower_components/angular/angular.min.js"></script>
+		
+		
+
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body ng-controller="CategoryList">
+	
+	<div class="container" id="body">
+	
+	<div class="container" id="queryForm" ng-show="qForm" >
+			<div class="col-md-3">
+				왼쪽
+			</div>
+			<div class="col-md-6 col-lg-6" class="text-center">
+				<div class="well">
+				
+				<div class="text-center" style="padding-bottom: 30px;"><h2>사용자 조회</h2> </div>
+				
+					<div class="panel panel-default">
+						<div class="panel-body">
+						          
+							
+							
+								<div class="form-group">
+									<label for="">핸드폰 번호</label>
+									<input type="text" class="form-control" id="phone_number" name="phone_number" placeholder="수검자핸드폰 번호" ng-model="phone_number">
+								</div>
+								
+								<div class="form-group">
+									<label for="">생년월일</label>
+									<input type="text" class="form-control" id="birth_date" name="birth_date" placeholder="20150101" ng-model="birth_date">
+								</div>
+							
+								
+							    <div class="text-center">
+								<button class="btn btn-primary" ng-click="CategoryRetrive()">조회</button>
+								</div>
+								
+						
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-md-3">
+				오른쪽
+			</div>
+			
+		</div>
+		
+		<div class="container" id="result" ng-show="result">
+		
+			<div class="well">
+			여기에 데이터 뿌려짐
+			</div>
+		
+		<div >
+		
+		</div>
+		</div>
+	
+	</div>
+		
+
+
+
+
+
+
+
+		<!-- jQuery -->
+		<script src="//code.jquery.com/jquery.js"></script>
+		<!-- Bootstrap JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+ 		<script src="js/caList.js"></script>
+	</body>
+</html>
